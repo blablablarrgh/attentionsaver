@@ -1,0 +1,85 @@
+<head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#quotation {
+    font-size: 700%;
+    font-family: 'Work+Sans', sans-serif;
+    width: 600px;
+}
+#source {
+  font-family: 'Assistant', sans-serif;
+  font-size: 4vmin;
+  text-indent: 4vmin;
+  color: rgba(0,0,0,0.6);
+}
+button { 
+  font-family: 'Assistant', sans-serif;
+  display: block;
+  padding: .5rem;
+  outline: none;
+  font-size: .8rem;
+  background: none;
+  border: 1px solid rgba(0,0,0,0.6);
+}
+    </style>
+</head>
+<body>
+<blockquote>
+    <p id="quotation"></p>
+    <footer>
+      <p id="source"></p>
+    </footer>
+  </blockquote>
+</body>
+  <button>Another One.</button>
+
+  <script>
+const quotes = [
+	{ 
+		"quote" : "OKAY, GO BACK TO DOING THINGS NOW.", 
+	},
+	{
+		"quote" : "STOP FUCKING AROUND ON THIS FOR GOD SAKE.", 
+	},
+	{
+		"quote" : "IT'S THE BIGGEST TIME WASTER AND YOU'RE NOT ACTUALLY INTERESTED, YOU'RE JUST BORED.", 
+	},
+	{
+		"quote" : "YOU'RE JUST FUCKING YOUR ATTENTION SPAN.", 
+	},
+	{
+		"quote" : "GO DO SOMETHING CONSTRUCTIVE.", 
+	},
+	{
+		"quote" : "THIS ISN'T EVEN FUN, STOP.", 
+	},
+	{
+		"quote" : "OKAY, COOL, THAT'S YOUR DOPAMINE HIT.", 
+	},
+	{
+		"quote" : "GO DO SOMETHING NICE.", 
+	},
+    {
+		"quote" : "THERE'S LITTERALLY NOTHING ELSE INTERESTING IN ANY OF THESE FEEDS.", 
+	},
+    {
+		"quote" : "GO, BE FREE", 
+	}
+]
+
+function randomQuote() {
+  let random = quotes[Math.floor(Math.random() * quotes.length)];
+  quotation.innerText = `${random.quote}`;
+}
+
+randomQuote();
+
+document.querySelector("button").addEventListener('click', randomQuote) 
+  </script>
